@@ -1,0 +1,53 @@
+{
+  "name": "perplexity",
+  "version": "1.0.0",
+  "description": "Unofficial OpenAI ChatGPT for Linux client",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "image": "npx electron-icon-builder --input=assets/icons/icon1.png --output=assets/icons/build --flatten",
+    "build": "npx electron-builder",
+    "build-snap": "npx electron-builder --linux snap",
+    "build-deb": "npx electron-builder --linux deb"
+  },
+  "build": {
+    "appId": "com.johnycode.perplexity",
+    "productName": "perplexity",
+    "icon": "assets/icons/build/icons/icon",
+    "linux": {
+      "target": ["deb","snap"],
+      "icon": "assets/icons/build/icons/512x512.png",
+      "category": "Utility"
+      },
+      "snap": {
+        "plugs": [
+          "camera",
+          "audio-record",
+          "audio-playback",
+          "pulseaudio",
+          "network",
+          "network-bind",
+          "desktop",
+          "desktop-legacy",
+          "browser-support",
+          "x11",
+          "wayland"
+        ]
+      }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/faisalkhanshah0/perplexity-linux.git"
+  },
+  "author": "Johnycode <faisalkhanshah@gmail.com> (https://github.com/faisalkhanshah0/perplexity-linux/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/faisalkhanshah0/perplexity-linux/issues"
+  },
+  "homepage": "https://github.com/faisalkhanshah0/perplexity-linux#readme",
+  "devDependencies": {
+    "electron": "^37.4.0",
+    "electron-builder": "^26.0.12"
+  }
+}
